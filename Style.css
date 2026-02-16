@@ -1,0 +1,98 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#141e30,#243b55);
+  font-family:sans-serif;
+}
+
+/* 🧊 GLASS */
+.glass{
+  padding:40px 50px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,0.2);
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* LAYOUT */
+.container{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+/* ICON */
+.icon{
+  width:65px;
+  height:65px;
+  background:#fff;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:26px;
+  position:relative;
+  cursor:pointer;
+  transition:.4s;
+}
+
+/* FADE OTHERS */
+.container:hover .icon{
+  opacity:.3;
+  transform:scale(.9);
+}
+
+.container .icon:hover{
+  opacity:1;
+  transform:scale(1.2);
+  color:#fff;
+}
+
+/* TOOLTIP */
+.icon span{
+  position:absolute;
+  top:-35px;
+  background:#000;
+  color:#fff;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:12px;
+  opacity:0;
+  transform:translateY(10px);
+  transition:.3s;
+}
+
+.icon:hover span{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* BRAND COLORS */
+.facebook:hover{ background:#1877f2; box-shadow:0 10px 25px #1877f2; }
+.instagram:hover{ background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7); box-shadow:0 10px 25px #ee2a7b; }
+.github:hover{ background:#333; box-shadow:0 10px 25px #000; }
+.youtube:hover{ background:#ff0000; box-shadow:0 10px 25px #ff0000; }
+
+/* 📱 MOBILE */
+@media (hover:none){
+
+  .container:hover .icon{
+    opacity:1;
+    transform:scale(1);
+  }
+
+  .icon:active{
+    transform:scale(1.2);
+  }
+
+}
